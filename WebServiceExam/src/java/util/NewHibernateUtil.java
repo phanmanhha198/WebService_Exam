@@ -6,7 +6,10 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
+/**
+ *
+ * @author macos
+ */
 public class NewHibernateUtil {
 
     private static final SessionFactory sessionFactory;
@@ -19,7 +22,6 @@ public class NewHibernateUtil {
                     .applySettings(configuration.getProperties()).build();
             sessionFactory = configuration.buildSessionFactory(serviceRegistry);
         } catch (Throwable ex) {
-            // Log the exception. 
             System.err.println("Initial SessionFactory creation failed." + ex);
             throw new ExceptionInInitializerError(ex);
         }

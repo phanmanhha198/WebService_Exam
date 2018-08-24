@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Lonely
+ * @author macos
  */
 @Entity
 @Table(name = "product")
@@ -41,7 +41,6 @@ public class Product implements Serializable {
     @Size(max = 45)
     @Column(name = "name")
     private String name;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "price")
     private Float price;
     @Column(name = "quantity")
@@ -95,7 +94,6 @@ public class Product implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Product)) {
             return false;
         }

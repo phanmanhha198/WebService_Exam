@@ -15,7 +15,7 @@ import util.NewHibernateUtil;
 
 /**
  *
- * @author Lonely
+ * @author macos
  */
 public class ProductDao {
 

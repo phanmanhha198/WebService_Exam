@@ -15,7 +15,7 @@ import service.ProductWebService_Service;
 
 /**
  *
- * @author Lonely
+ * @author macos
  */
 public class sellServlet extends HttpServlet {
 
@@ -25,9 +25,9 @@ public class sellServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //Check get list
+        
         if (getAllProducts() != null) {
-            //Get id to combobox by list
+            
             request.setAttribute("items", getAllProducts());
             request.getRequestDispatcher("sell.jsp").forward(request, response);
         } else {
@@ -39,10 +39,10 @@ public class sellServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //Get value from input
+        
         String id = request.getParameter("id");
         String quantity = request.getParameter("quantity");
-        //Boolean update a new quantity product by id
+        
         if (sellProduct(id, Integer.parseInt(quantity))) {
             if (getAllProducts() != null) {
                 request.setAttribute("items", getAllProducts());
